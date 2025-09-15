@@ -26,7 +26,7 @@ export default function PropertyDetailPage() {
         <div className="pt-20 flex items-center justify-center min-h-screen">
           <div className="text-center">
             <h1 className="text-3xl font-bold text-gray-900 mb-4">Property Not Found</h1>
-            <p className="text-gray-600 mb-8">The property you're looking for doesn't exist.</p>
+            <p className="text-gray-600 mb-8">The property you&apos;re looking for doesn&apos;t exist.</p>
             <Link href="/properties">
               <button className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700">
                 Back to Properties

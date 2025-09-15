@@ -19,7 +19,7 @@ export default function PropertiesPage() {
   const [sortBy, setSortBy] = useState<'price-low' | 'price-high' | 'newest' | 'oldest'>('newest');
 
   const filteredAndSortedProperties = useMemo(() => {
-    let filtered = mockProperties.filter((property) => {
+    const filtered = mockProperties.filter((property) => {
       if (searchTerm) {
         const searchLower = searchTerm.toLowerCase();
         const matchesSearch = 
@@ -49,7 +49,7 @@ export default function PropertiesPage() {
       return true;
     });
 
-    filtered.sort((a, b) => {
+    return filtered.sort((a, b) => {
       switch (sortBy) {
         case 'price-low':
           return a.price - b.price;
@@ -62,8 +62,6 @@ export default function PropertiesPage() {
           return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
       }
     });
-
-    return filtered;
   }, [searchTerm, filters, sortBy]);
 
   const clearFilters = () => {
